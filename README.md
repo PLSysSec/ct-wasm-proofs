@@ -45,8 +45,12 @@ With Isabelle downloaded, run:
 ```bash
 git clone git@github.com:PLSysSec/ct-wasm-proofs.git
 cd ct-wasm-proofs/CT-WASM_model
-<path/to/isabelle> build -D ./
+<.../bin/isabelle> build -D ./
 ```
+
+> Note: the `isabelle` binary you want to use if you downloaded Isabelle from the
+> above link lives in the `bin` directory. (The binary that lives in the top-level
+> directory is for the IDE and NOT what you want.)
 
 > Note: This build will take a very long time due to the need to bootstrap the
 > full Isabelle environment on the first execution. 
