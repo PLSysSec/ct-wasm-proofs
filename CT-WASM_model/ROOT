@@ -1,0 +1,20 @@
+session "WASM" = "HOL-Library" +
+  options [document = pdf, document_output = "output", document_variants="document:outline=/proof,/ML", timeout=2000]
+  sessions
+    "HOL-Eisbach"
+    "HOL-Word"
+  theories [document = false]
+    "AFP/Coinductive/Coinductive"
+    "AFP/Native_Word/Uint8"
+  theories
+    "Wasm_Soundness"
+    "Wasm_Checker_Properties"
+    "Wasm_Constant_Time"
+    "Wasm_Constant_Time_Ind"
+    "Wasm_Leakage"
+  theories [document = false]
+    "Wasm_Printing/Wasm_Checker_Printing"
+  document_files
+    "root.bib"
+    "root.tex"
+
