@@ -1,54 +1,65 @@
 # ct-wasm-proofs
 
-The CT-WASM Isabelle model may be found in CT-WASM_model.
+This repository contains the CT-Wasm model and mechanized proofs of soundness
+and security.
 
-Lemmas/definitions mentioned in paper, in order of appearance:
+The CT-WASM Isabelle model may be found in [CT-WASM_model](./CT-WASM_model).
 
-preservation - Wasm_Soundness.thy @ line 5
-equivp_config_indistinguishable - Wasm_Secret_Aux.thy @ line 1029
-config_indistinguishable_imp_config_typing - Wasm_Secret_Aux.thy @ line 891
-equivp_action_indistinguishable - Wasm_Secret.thy @ line 106
-config_indistinguishable_imp_reduce - Wasm_Secret.thy @ line 2165
-config_bisimulation - Wasm_Secret.thy @ line 2195
-config_bisimilar - Wasm_Secret.thy @ line 2201
-typed_indistinguishable_pairs - Wasm_Secret.thy @ line 2339
-config_bisimulation_typed_indistinguishable_pairs - Wasm_Secret.thy @ line 2388
-config_indistinguishable_imp_config_bisimilar - Wasm_Secret.thy @ line 2411
-config_indistinguishable_trace_noninterference - Wasm_Secret.thy @ line 2430
-config_is_trace - Wasm_Constant_Time.thy @ line 14
-config_trace_set - Wasm_Constant_Time.thy @ line 18
-observation - Wasm_Constant_Time.thy @ line 10
-config_obs_set - Wasm_Constant_Time.thy @ line 216
-config_untrusted_equiv - Wasm_Secret_Aux.thy @ line 1034
-part_equivp_config_untrusted_equiv - Wasm_Secret_Aux.thy @ line 1110
-config_untrusted_quot - Wasm_Secret_Aux.thy @ line 1119
-config_untrusted_quot_config_typing - Wasm_Secret_Aux.thy @ line 1220
-config_untrusted_quot_obs_set - Wasm_Constant_Time.thy @ line 218
-constant_time - Wasm_Constant_Time.thy @ line 244
-config_untrusted_constant_time - Wasm_Constant_Time.thy @ line 247
-config_untrusted_quot_constant_time - Wasm_Constant_Time.thy @ line 254
-config_untrusted_quot_constant_time_trivial - Wasm_Constant_Time.thy @ line 274
+#### Lemmas/definitions mentioned in paper, in order of appearance:
 
-To run the proofs end-to-end, Isabelle2017 is required:
+- [`preservation`](./CT-WASM_model/Wasm_Soundness.thy#L5)
+- [`equivp_config_indistinguishable`](./CT-WASM_model/Wasm_Secret_Aux.thy#L1029)
+- [`config_indistinguishable_imp_config_typing`](./CT-WASM_model/Wasm_Secret_Aux.thy#L891)
+- [`equivp_action_indistinguishable`](./CT-WASM_model/Wasm_Secret.thy#L106)
+- [`config_indistinguishable_imp_reduce`](./CT-WASM_model/Wasm_Secret.thy#L2165)
+- [`config_bisimulation`](./CT-WASM_model/Wasm_Secret.thy#L2195)
+- [`config_bisimilar`](./CT-WASM_model/Wasm_Secret.thy#L2201)
+- [`typed_indistinguishable_pairs`](./CT-WASM_model/Wasm_Secret.thy#L2339)
+- [`config_bisimulation_typed_indistinguishable_pairs`](./CT-WASM_model/Wasm_Secret.thy#L2388)
+- [`config_indistinguishable_imp_config_bisimilar`](./CT-WASM_model/Wasm_Secret.thy#L2411)
+- [`config_indistinguishable_trace_noninterference`](./CT-WASM_model/Wasm_Secret.thy#L2430)
+- [`config_is_trace`](./CT-WASM_model/Wasm_Constant_Time.thy#L14)
+- [`config_trace_set`](./CT-WASM_model/Wasm_Constant_Time.thy#L18)
+- [`observation`](./CT-WASM_model/Wasm_Constant_Time.thy#L10)
+- [`config_obs_set`](./CT-WASM_model/Wasm_Constant_Time.thy#L216)
+- [`config_untrusted_equiv`](./CT-WASM_model/Wasm_Secret_Aux.thy#L1034)
+- [`part_equivp_config_untrusted_equiv`](./CT-WASM_model/Wasm_Secret_Aux.thy#L1110)
+- [`config_untrusted_quot`](./CT-WASM_model/Wasm_Secret_Aux.thy#L1119)
+- [`config_untrusted_quot_config_typing`](./CT-WASM_model/Wasm_Secret_Aux.thy#L1220)
+- [`config_untrusted_quot_obs_set`](./CT-WASM_model/Wasm_Constant_Time.thy#L218)
+- [`constant_time`](./CT-WASM_model/Wasm_Constant_Time.thy#L244)
+- [`config_untrusted_constant_time`](./CT-WASM_model/Wasm_Constant_Time.thy#L247)
+- [`config_untrusted_quot_constant_time`](./CT-WASM_model/Wasm_Constant_Time.thy#L254)
+- [`config_untrusted_quot_constant_time_trivial`](./CT-WASM_model/Wasm_Constant_Time.thy#L274)
+
+
+#### Running the proofs
+
+To run the proofs end-to-end, Isabelle2017 is required; you can download an archive from:
 https://isabelle.in.tum.de/website-Isabelle2017/index.html
 
 We provide a ROOT file to run all proofs and generate a summary document.
-With Isabelle downloaded, run the following command in the CT-WASM_model
-folder.
+
+With Isabelle downloaded, run:
+
+```bash
+git clone git@github.com:PLSysSec/ct-wasm-proofs.git
+cd ct-wasm-proofs/CT-WASM_model
 <path/to/isabelle> build -D ./
+```
 
-In the archive linked above, the Isabelle command line tool can be found in the
-bin subdirectory. This build will take a very long time due to the need to
-bootstrap the full Isabelle environment on the first execution.
+> Note: This build will take a very long time due to the need to bootstrap the
+> full Isabelle environment on the first execution. 
+>
+> Moreover, note that existing ROOT files from previous installations of
+> Isabelle2017 may interfere with the build. These may have to be deleted from
+> the `.isabelle` folder that will have been left somewhere in the home
+> directory.
 
-Note that existing ROOT files from previous installations of Isabelle2017 may
-interfere with the build. These may have to be deleted from the .isabelle
-folder that will have been left somewhere in the home directory.
+Running the above commands will produce:
 
-All documents will appear in CT-WASM_model/output.
-
-The executable type checker will appear in
-CT-WASM_model/Wasm_Printing/Wasm_Extracted/checker.ml
+- Summary documents in the `CT-WASM_model/output` directory.
+- Executable type checker `CT-WASM_model/Wasm_Printing/Wasm_Extracted/checker.ml`
 
 For convenience, we supply a pre-built type checker, session graph, and summary
-document in the prebuilt folder.
+document in the [prebuilt folder](./prebuilt).
