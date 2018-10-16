@@ -1,4 +1,4 @@
-# ct-wasm-proofs
+# CT-Wasm Proofs
 
 This repository contains the CT-Wasm model and mechanized proofs of soundness
 and security.
