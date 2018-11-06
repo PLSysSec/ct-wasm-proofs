@@ -277,4 +277,17 @@ lemma config_untrusted_quot_constant_time_trivial:
   unfolding config_untrusted_quot_constant_time.rep_eq
   by (metis prod.exhaust)
 
+definition "trace_set_equiv = rel_set (llist_all2 action_indistinguishable)"
+
+definition constant_time_traces :: "((s \<times> v list \<times> e list) \<times> nat) \<Rightarrow> bool" where
+  "constant_time_traces = (\<lambda>(c, i). \<forall>c'. (c \<sim>_c c') \<longrightarrow> trace_set_equiv (config_trace_set c i) (config_trace_set c' i))"
+
+lemma config_untrusted_constant_time_traces:
+  assumes "\<turnstile>_i s;vs;es : (Untrusted,ts)"
+  shows "constant_time_traces ((s,vs,es),i)"
+  using assms
+  unfolding trace_set_equiv_def rel_set_def constant_time_traces_def
+  apply (simp del: config_indistinguishable.simps)
+  apply (metis observation.abs_eq_iff config_indistinguishable_imp_config_typing config_indistinguishable_symm program_actions_set2_indistinguishable_secrets_co)
+  done
 end
