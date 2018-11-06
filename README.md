@@ -22,7 +22,7 @@ The CT-WASM Isabelle model may be found in [CT-WASM_model](./CT-WASM_model).
 - [`config_trace_set`](./CT-WASM_model/Wasm_Constant_Time.thy#L18)
 - [`trace_set_equiv`](./CT-WASM_model/Wasm_Constant_Time.thy#L280)
 - [`constant_time_traces`](./CT-WASM_model/Wasm_Constant_Time.thy#L282)
-- [`config_untrusted_constant_time_traces`](./CT-WASM_model/Wasm_Constant_Time.thy)
+- [`config_untrusted_constant_time_traces`](./CT-WASM_model/Wasm_Constant_Time.thy#L285)
 - [`observation`](./CT-WASM_model/Wasm_Constant_Time.thy#L10)
 - [`config_obs_set`](./CT-WASM_model/Wasm_Constant_Time.thy#L216)
 - [`constant_time`](./CT-WASM_model/Wasm_Constant_Time.thy#L244)
