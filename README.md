@@ -61,3 +61,13 @@ Running the above commands will produce:
 
 For convenience, we supply a pre-built type checker, session graph, and summary
 document in the [prebuilt folder](./prebuilt).
+
+##### Using docker
+For convenience, we provide a docker image to run the proofs without setting up
+Isabelle in your own environment. Simply run:
+
+```
+./docker-build.sh
+```
+
+This will produce the same artifacts as the local instructions.
