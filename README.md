@@ -20,18 +20,12 @@ The CT-WASM Isabelle model may be found in [CT-WASM_model](./CT-WASM_model).
 - [`config_indistinguishable_trace_noninterference`](./CT-WASM_model/Wasm_Secret.thy#L2430)
 - [`config_is_trace`](./CT-WASM_model/Wasm_Constant_Time.thy#L14)
 - [`config_trace_set`](./CT-WASM_model/Wasm_Constant_Time.thy#L18)
+- [`trace_set_equiv`](./CT-WASM_model/Wasm_Constant_Time.thy)
+- [`constant_time_traces`](./CT-WASM_model/Wasm_Constant_Time.thy)
+- [`config_untrusted_constant_time_traces`](./CT-WASM_model/Wasm_Constant_Time.thy)
 - [`observation`](./CT-WASM_model/Wasm_Constant_Time.thy#L10)
 - [`config_obs_set`](./CT-WASM_model/Wasm_Constant_Time.thy#L216)
-- [`config_untrusted_equiv`](./CT-WASM_model/Wasm_Secret_Aux.thy#L1034)
-- [`part_equivp_config_untrusted_equiv`](./CT-WASM_model/Wasm_Secret_Aux.thy#L1110)
-- [`config_untrusted_quot`](./CT-WASM_model/Wasm_Secret_Aux.thy#L1119)
-- [`config_untrusted_quot_config_typing`](./CT-WASM_model/Wasm_Secret_Aux.thy#L1220)
-- [`config_untrusted_quot_obs_set`](./CT-WASM_model/Wasm_Constant_Time.thy#L218)
 - [`constant_time`](./CT-WASM_model/Wasm_Constant_Time.thy#L244)
-- [`config_untrusted_constant_time`](./CT-WASM_model/Wasm_Constant_Time.thy#L247)
-- [`config_untrusted_quot_constant_time`](./CT-WASM_model/Wasm_Constant_Time.thy#L254)
-- [`config_untrusted_quot_constant_time_trivial`](./CT-WASM_model/Wasm_Constant_Time.thy#L274)
-
 
 #### Running the proofs
 
